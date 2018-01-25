@@ -1,0 +1,31 @@
+{
+  "name": "ng2-people-picker",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/repo"
+  },
+  "author": {
+    "name": "Alexander Siedler",
+    "email": "alex.siedler@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "main": "ng2-people-picker.umd.js",
+  "module": "ng2-people-picker.js",
+  "jsnext:main": "ng2-people-picker.js",
+  "typings": "ng2-people-picker.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "sp-pnp-js": "^3.0.1",
+    "rxjs": "^5.1.0",
+    "es6-promise": "^4.1.1",
+    "whatwg-fetch": "^2.0.3",
+    "zone.js": "^0.8.4"
+  }
+}

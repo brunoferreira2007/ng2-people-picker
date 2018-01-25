@@ -1,0 +1,90 @@
+.peoplePicker>ul.ui-inputtext {
+    clear: left;
+    cursor: text;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 .25em;
+  }
+  .peoplePickerTags{
+    clear: left;
+    cursor: text;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 .25em;
+    font-weight: 400;
+    outline: medium none;
+    box-sizing: border-box;
+    background: #ffffff;
+      color: #222222;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+    border-radius: 3px;
+    border: 1px solid #d6d6d6;
+    display: block;
+    list-style-type: disc;
+  }
+  .peoplePicker>ul>li{
+    text-align: -webkit-match-parent;
+  }
+  .person{
+    cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: .125em .5em;
+    white-space: nowrap;
+    position: relative;
+    margin-right: .125em;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: 0 none;
+    font-size: .9em;
+  
+  }
+  .person.highlight {
+    background: #186ba0;
+    color: #FFFFFF;
+    border-radius: 3px;
+  }
+  .input-person{
+    display: inline-block;
+    vertical-align: middle;
+    list-style-type: none;
+    margin: 0 0 0 .125em;
+    padding: .25em .25em .25em 0;
+  }
+  .input-person>input{
+    border: 0 none;
+    width: 10em;
+    outline: medium none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0
+  }
+  .peopleSuggestion{
+    position: absolute;
+    -webkit-padding-start: 0px;
+    z-index:1500;
+  }
+  .loadingInput {
+    background-color: #ffffff;
+    background-image: url("../../assets/img/3.gif");
+    background-size: 25px 25px;
+    background-position:right center;
+    background-repeat: no-repeat;
+  }
+  .disabled {
+    background-color: #eee;
+    opacity: 1;
+    cursor: not-allowed;
+  }
+  .disabled>li, .disabled>li>div>span{
+    cursor: not-allowed !important;
+  }
+  

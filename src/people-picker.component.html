@@ -1,0 +1,22 @@
+<div class="peoplePicker" style="width:100%;" >
+    <div>
+      <ul class="peoplePickerTags" [ngClass]="{'loadingInput': loading, 'disabled': disable}" >
+        <li *ngFor="let people of selectedPersons" class="person highlight">
+          <div tooltip="hello world" placement="bottom">{{people.Title}}
+            <span (click)="remove(people)" class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></div>
+        </li>
+        <li class="input-person" *ngIf="selectedPersons.length < maxUsers">
+            <input style="width:100%;" name="searchBP" dropdownToggle type="text" [(ngModel)]="searchPerson" autocomplete="off"
+            (input)="onSearchChange($event.target.value)" [disabled]="disable">
+           </li>
+      </ul>
+
+       </div>
+    <ul class="peopleSuggestion" *ngIf="selectedPersons.length < maxUsers" >
+      <li class="list-group-item" *ngFor="let item of peoplePicker">
+        <div style="min-width: 400px; cursor: pointer;"(click)="addPersonToPicker(item)">
+          <span>{{item.DisplayText}}</span><span class="label label-primary pull-right">{{item.Description}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
