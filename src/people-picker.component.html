@@ -2,7 +2,7 @@
     <div>
       <ul class="peoplePickerTags" [ngClass]="{'loadingInput': loading, 'disabled': disable}" >
         <li *ngFor="let people of selectedPersons" class="person highlight">
-          <div tooltip="hello world" placement="bottom">{{people.Title}}
+          <div>{{people.Title}}
             <span (click)="remove(people)" class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></div>
         </li>
         <li class="input-person" *ngIf="selectedPersons.length < maxUsers">
