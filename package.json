@@ -1,6 +1,6 @@
 {
   "name": "ng2-people-picker",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zyborc/ng2-people-picker.git"
+    "url": "https://github.com/zyborc/ng2-people-picker"
   },
   "author": {
     "name": "Alexander Siedler",
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zyborc/ng2-people-picker.git/issues"
+    "url": "https://github.com/zyborc/ng2-people-picker/issues"
   },
   "devDependencies": {
     "@angular/common": "^5.0.0",

@@ -1,4 +1,10 @@
 # ng2-people-picker
+
+a SharePoint 2013 people picker for an angular2 app. It will use the following rest call to give user suggestions based on the search string:
+> /_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.clientPeoplePickerSearchUser
+
+
+
 - [ng2-people-picker](#ng2-people-picker)
   - [Look](#look)
     - [with user](#with-user)
