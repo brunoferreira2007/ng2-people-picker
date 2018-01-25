@@ -1,11 +1,20 @@
 # ng2-people-picker
 - [ng2-people-picker](#ng2-people-picker)
+  - [Look](#look)
+    - [with user](#with-user)
+    - [search result](#search-result)
   - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Use the library](#use-the-library)
   - [Data Input/Output](#data-inputoutput)
     - [WebEnsureUserResult](#webensureuserresult)
   - [License](#license)
+
+## Look 
+### with user
+![user](./pictures/enabled.png)
+### search result
+![search](./pictures/search.png)
 
 ## Installation
 
