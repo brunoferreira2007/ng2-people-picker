@@ -1,4 +1,11 @@
 # ng2-people-picker
+- [ng2-people-picker](#ng2-people-picker)
+  - [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [Use the library](#use-the-library)
+  - [Data Input/Output](#data-inputoutput)
+    - [WebEnsureUserResult](#webensureuserresult)
+  - [License](#license)
 
 ## Installation
 
@@ -8,63 +15,70 @@ To install this library, run:
 $ npm install ng2-people-picker --save
 ```
 
-## Consuming your library
+## Dependencies
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+* Bootstrap for glyphicon glyphicon-remove
+* sp-pnp-js
+  * es6-promise
+  * whatwg-fetch
 
-```bash
-$ npm install ng2-people-picker
-```
+## Use the library
 
-and then from your Angular `AppModule`:
+Import the Module into your Angular `AppModule`:
 
 ```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
 // Import your library
-import { SampleModule } from 'ng2-people-picker';
+import { PeoplePickerModule } from "ng2-people-picker";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
 
     // Specify your library as an import
-    LibraryModule
+    PeoplePickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its components in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<!-- You can now use the module in app.component.html -->
+<ng2-people-picker-component [(selectedPersons)]="Array with SP-Users" [maxUsers]="Number" [disable]="boolean"></ng2-people-picker-component>
 ```
 
-## Development
+## Data Input/Output
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+| name            | type                                                                      |
+| --------------- | ------------------------------------------------------------------------- |
+| selectedPersons | array of SiteUserProps users from an ensureUser function from sp-pnp-js. |
+| maxUsers        | number, minimun 1                                                         |
+| disable         | boolean, true or false(grey background and not-allows cursor)             |
 
-```bash
-$ npm run build
-```
+### WebEnsureUserResult
 
-To lint all `*.ts` files:
+Afterwards the user was selected from the search result we make an ensureUser call to get the proper sharepoint user and store the data: SiteUserProds in the array:
 
-```bash
-$ npm run lint
+```javascript
+export interface SiteUserProps {
+  Email: string;
+  Id: number;
+  IsHiddenInUI: boolean;
+  IsShareByEmailGuestUser: boolean;
+  IsSiteAdmin: boolean;
+  LoginName: string;
+  PrincipalType: number;
+  Title: string;
+}
 ```
 
 ## License
