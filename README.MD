@@ -20,7 +20,7 @@ a SharePoint 2013 people picker for an angular2 app. It will use the following r
 ### with user
 ![user](./pictures/enabled.png)
 ### search result
-![search](./pictures/search.png)
+![search](./pictures/search-result.png)
 
 ## Installation
 
