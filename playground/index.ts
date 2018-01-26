@@ -10,7 +10,8 @@ import { PeoplePickerModule }  from 'ng2-people-picker';
 
 @Component({
   selector: 'app',
-  template: `<ng2-people-picker-component [(selectedPersons)]="selectedKAM" [maxUsers]="1" [disable]="disableKam"></ng2-people-picker-component>`
+  template: `<ng2-people-picker-component
+   [(selectedPersons)]="selectedKAM" [maxUsers]="1" [disable]="disableKam"></ng2-people-picker-component>`
 })
 class AppComponent {
   welcomeText = 'hello World';
