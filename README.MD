@@ -47,7 +47,7 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 
-// Import your library
+// Import the library
 import { PeoplePickerModule } from "ng2-people-picker";
 
 @NgModule({
@@ -55,7 +55,7 @@ import { PeoplePickerModule } from "ng2-people-picker";
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
+    // Specify the library as an import
     PeoplePickerModule.forRoot()
   ],
   providers: [],
@@ -67,7 +67,7 @@ export class AppModule {}
 Once your library is imported, you can use its components in your Angular application:
 
 ```xml
-<!-- You can now use the module in app.component.html -->
+<!-- You can now use the module in your templates -->
 <ng2-people-picker-component [(selectedPersons)]="Array with SP-Users" [maxUsers]="Number" [disable]="boolean"></ng2-people-picker-component>
 ```
 
