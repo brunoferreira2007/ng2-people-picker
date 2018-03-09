@@ -37,9 +37,8 @@ export class PeoplePickerComponent implements DoCheck {
       this.peoplePicker = [];
     });
   }
-  remove(item: any): void {
+  remove(index: number): void {
     if (!this.disable) {
-      const index = this.selectedPersons.findIndex(person => item.Key === person.Key);
       if (index !== -1) {
         this.selectedPersons.splice(index, 1);
       }
