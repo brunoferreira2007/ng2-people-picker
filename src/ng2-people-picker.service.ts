@@ -12,10 +12,6 @@ pnp.setup({
 });
 @Injectable()
 export class PeoplePickerService {
-
-  constructor() {
-
-  }
   getPeoplePicker(searchString: string): Promise<any> {
     return new Promise((resolve, reject) => {
       const httpClient = new HttpClient();
