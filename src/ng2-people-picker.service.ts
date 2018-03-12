@@ -15,31 +15,35 @@ export class PeoplePickerService {
   getPeoplePicker(searchString: string): Promise<any> {
     return new Promise((resolve, reject) => {
       const httpClient = new HttpClient();
-      const endpointUrl =
-      `https://extranetscm.arvato.com/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.clientPeoplePickerSearchUser`;
-      httpClient
-      .post(endpointUrl, {
-        headers: {
-          Accept: `application/json; odata=verbose`
-        },
-        body: JSON.stringify({
-          queryParams: {
-            __metadata: {
-              type: 'SP.UI.ApplicationPages.ClientPeoplePickerQueryParameters'
-            },
-            AllowEmailAddresses: true,
-            AllowMultipleEntities: false,
-            AllUrlZones: false,
-            MaximumEntitySuggestions: 15,
-            PrincipalSource: 5,
-            PrincipalType: 5,
-            QueryString: searchString
-          }
+      pnp.sp.web.get().then(web => {
+
+        const endpointUrl =
+        `${web.Url}/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.clientPeoplePickerSearchUser`;
+        httpClient
+        .post(endpointUrl, {
+          headers: {
+            Accept: `application/json; odata=verbose`
+          },
+          body: JSON.stringify({
+            queryParams: {
+              __metadata: {
+                type: 'SP.UI.ApplicationPages.ClientPeoplePickerQueryParameters'
+              },
+              AllowEmailAddresses: true,
+              AllowMultipleEntities: false,
+              AllUrlZones: false,
+              MaximumEntitySuggestions: 15,
+              PrincipalSource: 5,
+              PrincipalType: 5,
+              QueryString: searchString
+            }
+          })
         })
-      })
-      .then(response => {
-        resolve(response.json());
-      }).catch(error => reject(error));
+        .then(response => {
+          resolve(response.json());
+        }).catch(error => reject(error));
+      });
+
     });
   }
   getUserByRacf(racf: string): Promise<WebEnsureUserResult> {
