@@ -15,11 +15,11 @@ export class PeoplePickerService {
 
   setBaseUrl(url:string){
     pnp.setup({
-      baseUrl: url,
       sp: {
         headers: {
             'Accept': 'application/json; odata=verbose'
-        }
+        },
+        baseUrl: url
       }
     })
   }
