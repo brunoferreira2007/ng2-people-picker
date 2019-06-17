@@ -12,6 +12,18 @@ pnp.setup({
 });
 @Injectable()
 export class PeoplePickerService {
+
+  setBaseUrl(url:string){
+    pnp.setup({
+      baseUrl: url,
+      sp: {
+        headers: {
+            'Accept': 'application/json; odata=verbose'
+        }
+      }
+    })
+  }
+
   getPeoplePicker(searchString: string): Promise<any> {
     return new Promise((resolve, reject) => {
       const httpClient = new HttpClient();
