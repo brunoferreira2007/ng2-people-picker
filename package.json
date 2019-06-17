@@ -2,6 +2,7 @@
   "name": "ng2-people-picker",
   "version": "0.2.0",
   "scripts": {
+    "prepare": "npm run build",
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
